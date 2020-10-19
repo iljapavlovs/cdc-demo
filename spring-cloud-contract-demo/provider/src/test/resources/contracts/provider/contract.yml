@@ -1,0 +1,52 @@
+description: When a POST request with a User is made, the created user's ID is returned
+name: some name
+priority: 8
+ignored: false
+request:
+  url: /persons
+#  queryParameters:
+#    a: b
+#    b: c
+  method: POST
+#  headers:
+#    foo: bar
+#    fooReq: baz
+  body:
+    name: Ivan
+    ssn: 111
+#  matchers:
+#    body:
+#      - path: $.name
+#        type: by_regex
+#        value: bar
+  headers:
+    Content-Type: application/json
+response:
+  status: 201
+#  headers:
+#    foo2: bar
+#    foo3: foo33
+#    fooRes: baz
+  body:
+    id: 1
+    name: Ivan
+    ssn: 111
+
+#  matchers:
+#    body:
+#      - path: $.foo2
+#        type: by_regex
+#        value: bar
+#      - path: $.foo3
+#        type: by_command
+#        value: executeMe($it)
+#      - path: $.nullValue
+#        type: by_null
+#        value: null
+#    headers:
+#      - key: foo2
+#        regex: bar
+#      - key: foo3
+#        command: andMeToo($it)
+  headers:
+    Content-Type: application/json

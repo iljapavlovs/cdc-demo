@@ -1,0 +1,10 @@
+POST http://localhost:8080/persons
+Content-Type: application/json
+
+{
+  "name": "Ilja",
+  "ssn": "3242"
+}
+
+###
+GET http://localhost:8080/persons/5930c620-6c71-4f37-9468-05acd7d866cb
