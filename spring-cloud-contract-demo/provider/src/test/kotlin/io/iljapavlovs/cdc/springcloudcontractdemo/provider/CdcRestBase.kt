@@ -11,12 +11,13 @@ import org.springframework.boot.test.mock.mockito.MockBean
 
 
 @SpringBootTest(classes = [ProviderApplication::class])
-abstract class PersonServiceBase {
+abstract class CdcRestBase {
     @Autowired
     private lateinit var personController: PersonController
 
     @MockBean
     private lateinit var personRepository: PersonRepository
+
     @BeforeEach
     fun setup() {
         RestAssuredMockMvc.standaloneSetup(personController);
@@ -26,7 +27,11 @@ abstract class PersonServiceBase {
             name = "Ivan",
             ssn = "111"
         )
-//        whenever(personRepository.findByIdOrNull(eq("13123"))).thenReturn(person)
         whenever(personRepository.save(any<PersonEntity>())) doReturn (person)
     }
 }
+
+
+
+
+

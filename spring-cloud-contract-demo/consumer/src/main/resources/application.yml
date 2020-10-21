@@ -1,0 +1,6 @@
+server:
+  port: 8081
+provider:
+  uri: http://localhost:8888
+#stubrunner:
+#    repositoryRoot: http://path.to.repo/repo-name

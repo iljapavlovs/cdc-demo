@@ -12,8 +12,8 @@ request:
 #    foo: bar
 #    fooReq: baz
   body:
-    name: Ivan
-    ssn: 111
+    name: "Ivan"
+    ssn: "111"
 #  matchers:
 #    body:
 #      - path: $.name
@@ -28,9 +28,9 @@ response:
 #    foo3: foo33
 #    fooRes: baz
   body:
-    id: 1
-    name: Ivan
-    ssn: 111
+    id: "1"
+    name: "Ivan"
+    ssn: "111"
 
 #  matchers:
 #    body:

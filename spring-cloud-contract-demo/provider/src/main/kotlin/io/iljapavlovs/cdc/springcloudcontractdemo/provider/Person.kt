@@ -2,19 +2,25 @@ package io.iljapavlovs.cdc.springcloudcontractdemo.provider
 
 import javax.persistence.Column
 import javax.persistence.Entity
-import javax.persistence.GeneratedValue
 import javax.persistence.Id
 import javax.validation.constraints.NotNull
 
 data class PersonRequestDto(
-     val name: String,
-     val ssn: String
+    val name: String,
+    val ssn: String
 )
 
 data class PersonResponseDto(
-     val id: String,
-     val name: String,
-     val ssn: String
+    val id: String,
+    val name: String,
+    val ssn: String
+)
+
+
+data class PersonMessage(
+    val name: String,
+    val ssn: String
+//     val eventTime: LocalDateTime
 )
 
 /**
@@ -22,16 +28,16 @@ data class PersonResponseDto(
  */
 @Entity
 data class PersonEntity(
-     @Id
-     val id: String,
+    @Id
+    val id: String,
 
-     @Column
-     @NotNull
-     var name: String,
+    @Column
+    @NotNull
+    var name: String,
 
-     @Column
-     @NotNull
-     var ssn: String
+    @Column
+    @NotNull
+    var ssn: String
 ) {
 
      fun updateFrom(person: PersonEntity) {

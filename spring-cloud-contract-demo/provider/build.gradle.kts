@@ -74,6 +74,8 @@ dependencies {
     testImplementation("io.rest-assured:json-path:4.3.1")
     testImplementation("io.rest-assured:xml-path:4.3.1")
 
+    implementation("org.springframework.boot:spring-boot-starter-amqp")
+
 
     // Remember to add this for the DSL support in the IDE and on the consumer side
 //    testImplementation("org.springframework.cloud:spring-cloud-contract-spec-kotlin")
@@ -84,17 +86,22 @@ tasks.withType<Test> {
 }
 
 
-contracts {
-//    packageWithBaseClasses = "hello"
-    packageWithBaseClasses.set("io.iljapavlovs.cdc.springcloudcontractdemo.provider")
 
-//    The mapping we defined above tells Spring Cloud Contract that the tests generated for any contracts it finds in src/test/resources/contracts that contain “userservice” in their path are to be subclassed from our test base class UserServiceBase. We could define more mappings if different tests require different setups (i.e. different base classes).
+contracts {
+    packageWithBaseClasses.set("io.iljapavlovs.cdc.springcloudcontractdemo.provider")
+//    The mapping we defined above tells Spring Cloud Contract that the tests generated for any contracts it finds
+//   in src/test/resources/contracts that contain “userservice” in their path are to be subclassed from our test base class UserServiceBase.
+//  We could define more mappings if different tests require different setups (i.e. different base classes).
     baseClassMappings {
-        baseClassMapping( ".*provider.*", "io.iljapavlovs.cdc.springcloudcontractdemo.provider.PersonServiceBase")
+        baseClassMapping(
+            ".*rest.*",
+            "io.iljapavlovs.cdc.springcloudcontractdemo.provider.CdcRestBase"
+        )
     }
+
     setTestFramework(org.springframework.cloud.contract.verifier.config.TestFramework.JUNIT5)
 
-//    contractsDslDir = new File(project.rootDir, "src/test/java/contracts")
+    failOnInProgress.set(false)
 }
 
 

@@ -10,7 +10,7 @@ import org.springframework.web.client.getForObject
 
 @Component
 class ProviderClient(
-    private val props: ProviderProperties,
+    private val props: ConsumerProperties,
     private val restTemplate: RestTemplate
 ) {
     private val log = LoggerFactory.getLogger(javaClass)

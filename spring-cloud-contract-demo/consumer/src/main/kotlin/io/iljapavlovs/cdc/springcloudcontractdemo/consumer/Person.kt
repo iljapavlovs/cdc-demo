@@ -10,3 +10,9 @@ data class PersonResponseDto(
      val name: String,
      val ssn: String
 )
+
+data class PersonMessage(
+     val name: String,
+     val ssn: String
+//     val eventTime: LocalDateTime
+)

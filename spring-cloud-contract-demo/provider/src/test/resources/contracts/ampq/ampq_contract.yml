@@ -1,0 +1,12 @@
+inProgress: true
+label: person-created
+input:
+  triggeredBy: onPersonCreated()
+outputMessage:
+  #  //in our case the destination is an exchange name
+  sentTo: producer.external
+  body:
+    name: Ivan
+    ssn: 111
+  headers:
+    contentType: application/json
