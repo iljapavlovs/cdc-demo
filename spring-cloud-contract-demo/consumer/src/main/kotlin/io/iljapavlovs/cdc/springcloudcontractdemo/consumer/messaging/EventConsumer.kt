@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component
 class EventConsumer(
 
 ) {
-
     @RabbitListener(
         queues = [CONSUMER_QUEUE],
         containerFactory = DEFAULT_JSON_CONTAINER_FACTORY

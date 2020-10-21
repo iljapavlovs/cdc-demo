@@ -88,14 +88,14 @@ tasks.withType<Test> {
 
 
 contracts {
-    packageWithBaseClasses.set("io.iljapavlovs.cdc.springcloudcontractdemo.provider")
+    packageWithBaseClasses.set("io.iljapavlovs.cdc.springcloudcontractdemo.provider.contractbase")
 //    The mapping we defined above tells Spring Cloud Contract that the tests generated for any contracts it finds
 //   in src/test/resources/contracts that contain “userservice” in their path are to be subclassed from our test base class UserServiceBase.
 //  We could define more mappings if different tests require different setups (i.e. different base classes).
     baseClassMappings {
         baseClassMapping(
             ".*rest.*",
-            "io.iljapavlovs.cdc.springcloudcontractdemo.provider.CdcRestBase"
+            "io.iljapavlovs.cdc.springcloudcontractdemo.provider.contractbase.ContractTestRestBase"
         )
     }
 
