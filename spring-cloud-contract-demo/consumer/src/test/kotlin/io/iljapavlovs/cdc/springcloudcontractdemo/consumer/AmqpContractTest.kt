@@ -17,7 +17,7 @@ import org.springframework.cloud.contract.stubrunner.spring.StubRunnerProperties
  * The stubsMode is set to LOCAL meaning that the artifact should be resolved against the local Maven repository on our machine for now.
  * And since we have published the stub to our local Maven repository, it should resolve just fine.
  */
-@SpringBootTest
+@SpringBootTest(properties = ["stubrunner.amqp.enabled=true"])
 @AutoConfigureStubRunner(
     ids = ["io.iljapavlovs.cdc.spring-cloud-contract-demo:provider:+"],
     stubsMode = StubRunnerProperties.StubsMode.LOCAL
@@ -30,7 +30,6 @@ class AmqpContractTest {
      * 3. and finally processed by the Consumer.
      * We can autowire an StubTrigger that is able to emulate other-party message interactions.
      */
-
     @Autowired
     private lateinit var stubTrigger: StubTrigger
 
@@ -39,7 +38,7 @@ class AmqpContractTest {
 
     @Test
     fun shouldReceiveMessage() {
-        //We will refer to the particular part of the scenario via label that was specified way back in the YAML
+        //refer to the particular part of the scenario via `label` that was specified way back in the YAML
         stubTrigger.trigger("person-created");
 
         assertThat(eventConsumer.createdPersons).hasSize(1)
