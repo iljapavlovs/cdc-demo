@@ -1,6 +1,14 @@
+server:
+  port: 8081
+provider:
+  uri: http://localhost:8888
+#stubrunner:
+#    repositoryRoot: http://path.to.repo/repo-name
+
 stubrunner:
   amqp:
     enabled: true
+
   stream:
     #    To be on the safe side, we will disable the Cloud Stream Stub Runner, which might be enabled by default for Stream-Based AMQP integration.
     enabled: false

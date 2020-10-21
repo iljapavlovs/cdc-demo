@@ -20,7 +20,7 @@ contracts {
 ```
 5. _OPTIONAL_ - generate tests in _build/generated-test-sources_ folder
 ```
-./gradlew generateContractTests
+./gradlew clean generateContractTests
 ```
 
 6. Build project -  generate, run tests and create a Stub Runner based on a contract
@@ -32,7 +32,7 @@ contracts {
         ```
         ./gradlew publishToMavenLocal
         ```
-    * Local Maven Repo
+    * Remote Maven Repo
       ```
       ./gradlew publish
       ```

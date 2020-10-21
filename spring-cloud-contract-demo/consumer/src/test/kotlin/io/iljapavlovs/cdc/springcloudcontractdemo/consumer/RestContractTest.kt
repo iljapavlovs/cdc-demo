@@ -20,7 +20,7 @@ import org.springframework.cloud.contract.stubrunner.spring.StubRunnerProperties
     ids = ["io.iljapavlovs.cdc.spring-cloud-contract-demo:provider:+:stubs:8888"],
     stubsMode = StubRunnerProperties.StubsMode.LOCAL
 )
-class ContractTest {
+class RestContractTest {
     @Autowired
     private lateinit var providerClient: ProviderClient
 

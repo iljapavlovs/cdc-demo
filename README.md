@@ -39,4 +39,6 @@ Resources:
 
 * Getting Started tutorial - https://docs.spring.io/spring-cloud-contract/docs/2.2.4.RELEASE/reference/html/getting-started.html#getting-started-introducing-spring-cloud-contract
 * FAQ , useful info - https://cloud.spring.io/spring-cloud-static/spring-cloud-contract/2.0.1.RELEASE/multi/multi__spring_cloud_contract_faq.html
+
+* SCC - Rabbit MQ - https://novotnyr.github.io/scrolls/enforcing-spring-cloud-contracts-over-amqp/
  

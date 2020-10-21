@@ -1,12 +1,18 @@
-inProgress: true
+#inProgress: true
 label: person-created
 input:
+  # this is the name of the TEST method on Producer side, which should send message to the Exchange
   triggeredBy: onPersonCreated()
 outputMessage:
-  #  //in our case the destination is an exchange name
+  # exchange name
   sentTo: producer.external
   body:
     name: Ivan
     ssn: 111
   headers:
     contentType: application/json
+#    trace_id: ""
+#  matchers:
+#    headers:
+#      - key: trace_id
+#        regex: "http://localhost/customers/v1/.*"

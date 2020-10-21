@@ -1,4 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.cloud.contract.verifier.config.TestFramework.JUNIT5
+
 //https://github.com/spring-cloud-samples/spring-cloud-contract-samples/blob/master/producer_kotlin_ftw/build.gradle.kts
 // https://cloud.spring.io/spring-cloud-contract/reference/html/project-features.html#contract-kotlin
 //http://antkorwin.com/cloud/spring_cloud_contract_junit5.html
@@ -88,6 +90,7 @@ tasks.withType<Test> {
 
 
 contracts {
+//    https://docs.spring.io/spring-cloud-contract/docs/2.2.4.RELEASE/reference/html/gradle-project.html#by-convention
     packageWithBaseClasses.set("io.iljapavlovs.cdc.springcloudcontractdemo.provider.contractbase")
 //    The mapping we defined above tells Spring Cloud Contract that the tests generated for any contracts it finds
 //   in src/test/resources/contracts that contain “userservice” in their path are to be subclassed from our test base class UserServiceBase.
@@ -97,9 +100,13 @@ contracts {
             ".*rest.*",
             "io.iljapavlovs.cdc.springcloudcontractdemo.provider.contractbase.ContractTestRestBase"
         )
+        baseClassMapping(
+            ".*ampq.*",
+            "io.iljapavlovs.cdc.springcloudcontractdemo.provider.contractbase.ContractTestAmpqBase"
+        )
     }
 
-    setTestFramework(org.springframework.cloud.contract.verifier.config.TestFramework.JUNIT5)
+    setTestFramework(JUNIT5)
 
     failOnInProgress.set(false)
 }
