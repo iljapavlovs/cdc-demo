@@ -51,9 +51,10 @@ tasks.withType<Test> {
 }
 
 // Publish pact files
+
+
 pact {
     publish {
-//        pactDirectory = 'build/pacts'
         pactDirectory = "$buildDir/pacts"
         pactBrokerUrl = "http://localhost:3000"
     }

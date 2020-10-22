@@ -10,7 +10,6 @@ import au.com.dius.pact.core.model.annotations.Pact
 import au.com.dius.pact.core.model.annotations.PactFolder
 import org.apache.http.HttpResponse
 import org.apache.http.client.fluent.Request
-import org.apache.http.entity.ContentType
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
@@ -42,17 +41,16 @@ import org.springframework.boot.test.context.SpringBootTest
 
 
 @SpringBootTest
-
-
 /**
  * With the PactConsumerTestExt together with the @PactTestFor annotation,
  * we tell pact to start a mock API provider on localhost:8888
  * This mock provider will return responses according to all pact fragments from the @Pact methods within the test class
  */
-@ExtendWith(PactConsumerTestExt::class) // 1. Add the Pact consumer test extension to the test class.
+// 1. Add the Pact consumer test extension to the test class.
+@ExtendWith(PactConsumerTestExt::class)
 @PactTestFor(providerName = "userservice", port = "8888")
 @PactFolder("build/pacts")
-class ProviderClientTest {
+class RestConsumerContractTest {
 
     @Autowired
     private lateinit var providerClient: ProviderClient
@@ -69,7 +67,6 @@ class ProviderClientTest {
     //2. create a method annotated with @Pact that returns the interactions for the test
     @Pact(provider = "userservice", consumer = "userclient")
     public fun createPersonPact(builder: PactDslWithProvider): RequestResponsePact {
-
 
         return builder
             .given("provider accepts a new person")//STATE!!!
@@ -106,26 +103,6 @@ class ProviderClientTest {
             )
             .toPact();
     }
-
-//    @Pact(provider = "userservice", consumer = "userclient")
-//    public fun getPersonPact(builder: PactDslWithProvider): RequestResponsePact {
-//        return builder
-//            .given("provider provides a person")
-//            .uponReceiving("a request to GET a person")
-//            .path("/persons/s??")
-//            .method("GET")
-//            .willRespondWith()
-//            .status(200)
-//            .matchHeader("Content-Type", "application/json")
-//            .body(
-//
-//                PactDslJsonBody()
-//                    .integerType("id", 42)
-//                    .stringType("name", "Ivan")
-//                    .stringType("ssn", "111")
-//            )
-//            .toPact();
-//    }
 
     @BeforeEach
     fun setUp() {

@@ -10,7 +10,7 @@ import org.springframework.cloud.contract.verifier.messaging.boot.AutoConfigureM
 @SpringBootTest(properties = ["stubrunner.amqp.enabled=true"])
 //denoting a base class for integration tests
 @AutoConfigureMessageVerifier
-abstract class ContractTestAmpqBase {
+abstract class ContractTestAmqpBase {
     @Autowired
     private lateinit var rabbitMqSender: RabbitMqSender
 

@@ -101,8 +101,8 @@ contracts {
             "io.iljapavlovs.cdc.springcloudcontractdemo.provider.contractbase.ContractTestRestBase"
         )
         baseClassMapping(
-            ".*ampq.*",
-            "io.iljapavlovs.cdc.springcloudcontractdemo.provider.contractbase.ContractTestAmpqBase"
+            ".*amqp.*",
+            "io.iljapavlovs.cdc.springcloudcontractdemo.provider.contractbase.ContractTestAmqpBase"
         )
     }
 
