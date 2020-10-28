@@ -16,4 +16,7 @@ docker-compose up
 
 
 ### On Provider side
-1. Run Test and it will send results to Pact Broker
+1. Run Test
+  * Pact will automatically download the pact (contract in json format)
+  * When test is executed, Pact will send results to Pact Broker
+ 
