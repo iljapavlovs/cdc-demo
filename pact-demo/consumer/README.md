@@ -3,12 +3,12 @@
 docker-compose up
 ```
 
-1. Run Tests
+2. Run Tests
 ```
 ./gradlew clean test
 ```
 
-2. Publish Pact contracts to Pact Broker
+3. Publish Pact contracts to Pact Broker
 ```
 ./gradlew pactPublish
 ```
