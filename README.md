@@ -25,4 +25,8 @@
     * https://github.com/steam0/pact-consumer/blob/master/src/test/java/com/example/pact/consumer/ProviderPactTests.java
     * https://github.com/steam0/pact-guide
     * https://medium.com/@liran.tal/a-comprehensive-guide-to-contract-testing-apis-in-a-service-oriented-architecture-5695ccf9ac5a
+* Matchers examples:    
+ * YML - https://github.com/spring-cloud/spring-cloud-contract/tree/2.1.x/spring-cloud-contract-verifier/src/test/resources/yml
+ * ALL - https://cloud.spring.io/spring-cloud-contract/reference/html/project-features.html#contract-dsl-name
+    * [Dynamic Properties](https://cloud.spring.io/spring-cloud-contract/reference/html/project-features.html#contract-dsl-dynamic-properties)
     
