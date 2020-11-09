@@ -59,4 +59,60 @@
       - key: search
         type: not_matching
         value: '^[0-9]{2}$'
+//absent
+      - key: hello
+        type: absent
 ```
+
+### Predefined
+```
+T anyAlphaUnicode();
+
+T anyAlphaNumeric();
+
+T anyNumber();
+
+T anyInteger();
+
+T anyPositiveInt();
+
+T anyDouble();
+
+T anyHex();
+
+T aBoolean();
+
+T anyIpAddress();
+
+T anyHostname();
+
+T anyEmail();
+
+T anyUrl();
+
+T anyHttpsUrl();
+
+T anyUuid();
+
+T anyDate();
+
+T anyDateTime();
+
+T anyTime();
+
+T anyIso8601WithOffset();
+
+T anyNonBlankString();
+
+T anyNonEmptyString();
+
+T anyOf(String... values);
+```
+
+
+
+
+* Matchers examples:    
+ * YML - https://github.com/spring-cloud/spring-cloud-contract/tree/2.1.x/spring-cloud-contract-verifier/src/test/resources/yml
+ * ALL - https://cloud.spring.io/spring-cloud-contract/reference/html/project-features.html#contract-dsl-name
+    * [Dynamic Properties](https://cloud.spring.io/spring-cloud-contract/reference/html/project-features.html#contract-dsl-dynamic-properties)

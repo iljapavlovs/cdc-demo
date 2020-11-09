@@ -23,6 +23,19 @@ contracts {
 ./gradlew clean generateContractTests
 ```
 
+
+5. _OPTIONAL_ - If you do not want to use Stub Runner, you need to copy the contracts stored in src/test/resources/contracts and generate WireMock JSON stubs by using the following command:
+```
+./gradlew generateClientStubs
+```
+
+
+5. _OPTIONAL_ - pushing stubs to the Maven repository
+```
+./gradlew pushStubsToScm
+```
+
+
 6. Build project -  generate, run tests and create a Stub Runner based on a contract
 ```
 ./gradlew clean build 
