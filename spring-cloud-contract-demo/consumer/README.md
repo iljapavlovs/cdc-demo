@@ -9,3 +9,7 @@
     * verify that client code works exactly as the contract specifies, verify response, check that DTO is successfully deserialized
     * SCC will automatically download the Stub Runner artifact at test runtime
     * You can verify Stub Runner downloaded from local or remote Maven repo
+    * OPTIONALLY - If you do not want to use Stub Runner, you need to copy the contracts stored in src/test/resources/contracts and generate WireMock JSON stubs by using the following command:
+      ```
+      ./gradlew generateClientStubs
+      ```

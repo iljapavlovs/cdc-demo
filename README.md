@@ -27,6 +27,11 @@
     * https://medium.com/@liran.tal/a-comprehensive-guide-to-contract-testing-apis-in-a-service-oriented-architecture-5695ccf9ac5a
 * Matchers examples:    
  * YML - https://github.com/spring-cloud/spring-cloud-contract/tree/2.1.x/spring-cloud-contract-verifier/src/test/resources/yml
+    * yml schema - https://cloud.spring.io/spring-cloud-contract/reference/html/yml-schema.html
+    * https://cloud.spring.io/spring-cloud-contract/reference/html/project-features.html#yaml
  * ALL - https://cloud.spring.io/spring-cloud-contract/reference/html/project-features.html#contract-dsl-name
     * [Dynamic Properties](https://cloud.spring.io/spring-cloud-contract/reference/html/project-features.html#contract-dsl-dynamic-properties)
-    
+
+* Messaging
+    *  https://developer.epages.com/blog/tech-stories/how-to-test-eventbased-services-using-contracts/
+        * https://github.com/mduesterhoeft/testing-asynchonous-interactions   
