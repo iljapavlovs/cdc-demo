@@ -37,4 +37,7 @@
         * https://github.com/mduesterhoeft/testing-asynchonous-interactions        
         
 * [Great Example with CI(Teamcity) and Artifactory](http://antkorwin.com/cloud/spring_cloud_contract_junit5.html) 
-    * https://github.com/antkorwin/cdc-spring       
+    * https://github.com/antkorwin/cdc-spring      
+    
+* [Great Example with CI (Jenkins) and Artifactory](https://piotrminkowski.com/2018/07/04/continuous-integration-with-jenkins-artifactory-and-spring-cloud-contract/)    
+    * https://github.com/piomin/sample-spring-cloud-contract-ci 
