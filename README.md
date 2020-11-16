@@ -34,4 +34,7 @@
 
 * Messaging
     *  https://developer.epages.com/blog/tech-stories/how-to-test-eventbased-services-using-contracts/
-        * https://github.com/mduesterhoeft/testing-asynchonous-interactions   
+        * https://github.com/mduesterhoeft/testing-asynchonous-interactions        
+        
+* [Great Example with CI(Teamcity) and Artifactory](http://antkorwin.com/cloud/spring_cloud_contract_junit5.html) 
+    * https://github.com/antkorwin/cdc-spring       
