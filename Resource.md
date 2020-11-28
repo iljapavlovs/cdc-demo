@@ -1,6 +1,8 @@
 
 # Spring Cloud Contracts
 ### Resources:
+* [Complete Guide](https://docs.spring.io/spring-cloud-contract/docs/2.2.5.RELEASE/reference/htmlsingle/)
+
 * Gradle - https://docs.spring.io/spring-cloud-contract/docs/2.2.4.RELEASE/reference/html/gradle-project.html#gradle-add-stubs
 * Contract scheme (YML, Kotlin, Java, Groovy), Messaging - https://docs.spring.io/spring-cloud-contract/docs/2.2.4.RELEASE/reference/html/project-features.html#features-http
 * Provider Contract Testing with Stubs in Nexus or Artifactory (Full Flow) - https://cloud-samples.spring.io/spring-cloud-contract-samples/tutorials/contracts_on_the_producer_side.html#_consumer_flow_1
