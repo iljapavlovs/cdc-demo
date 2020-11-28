@@ -37,6 +37,11 @@
     
 * [Great Example with CI (Jenkins) and Artifactory](https://piotrminkowski.com/2018/07/04/continuous-integration-with-jenkins-artifactory-and-spring-cloud-contract/)    
     * https://github.com/piomin/sample-spring-cloud-contract-ci 
+
+* Spring Cloud Contract FAQ
+ *  [What is this value(consumer(), producer()) ?](https://cloud.spring.io/spring-cloud-static/spring-cloud-contract/2.0.1.RELEASE/multi/multi__spring_cloud_contract_faq.html#_what_is_this_value_consumer_producer)
+ * [How to do Stubs versioning?](https://cloud.spring.io/spring-cloud-static/spring-cloud-contract/2.0.1.RELEASE/multi/multi__spring_cloud_contract_faq.html#_how_to_do_stubs_versioning)
+ * [Can I use the Pact Broker?](https://cloud.spring.io/spring-cloud-static/spring-cloud-contract/2.0.1.RELEASE/multi/multi__spring_cloud_contract_faq.html#_can_i_use_the_pact_broker)
     
     
 # Pact
