@@ -30,7 +30,7 @@ contracts {
 ```
 
 
-5. _OPTIONAL_ - pushing stubs to the Maven repository
+5. _OPTIONAL_ - when using separate Git repo for storing contracts - pushing stubs 
 ```
 ./gradlew pushStubsToScm
 ```
