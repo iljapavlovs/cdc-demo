@@ -35,6 +35,11 @@ contracts {
 ./gradlew pushStubsToScm
 ```
 
+5. _OPTIONAL_ - generate jar library with stubs
+
+```
+./gradlew verifierStubsJar
+```
 
 6. Build project -  generate, run tests and create a Stub Runner based on a contract
 ```
