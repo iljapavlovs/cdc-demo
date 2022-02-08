@@ -91,7 +91,8 @@ class RestConsumerContractTest {
                  * https://docs.pact.io/implementation_guides/jvm/consumer/#building-json-bodies-with-pactdsljsonbody-dsl
                  */
                 PactDslJsonBody()
-                    .stringType("id", "1") // stringType - just verifies type of the JSON key and randomly generates a value if second argument is not provided
+                        //show example by changing to UUIDType and opening build/pacts - show how matcher changed
+                    .stringType("id") // stringType - just verifies type of the JSON key and randomly generates a value if second argument is not provided
                     .stringType("name", "Ivan")
                     //If no example value is given, a random one will be generated. (e.g. zGRVCO9FWN8Gq9Pbm5w7)
                     .stringType("ssn", "111")
@@ -101,7 +102,7 @@ class RestConsumerContractTest {
                  */
 
             )
-            .toPact();
+            .toPact()
     }
 
     @BeforeEach

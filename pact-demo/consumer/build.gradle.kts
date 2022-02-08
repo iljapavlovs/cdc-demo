@@ -1,4 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import java.io.ByteArrayOutputStream
+import java.text.SimpleDateFormat
+import java.util.Date
+
 
 plugins {
     id("org.springframework.boot") version "2.3.4.RELEASE"
@@ -56,9 +60,12 @@ tasks.withType<Test> {
 pact {
     publish {
         pactDirectory = "$buildDir/pacts"
-        pactBrokerUrl = "http://localhost:3000"
+        pactBrokerUrl = "http://localhost:9292"
+        tags = listOf(getGitBranch(), "test", "prod")
+        consumerVersion = "$version.${getGitHash()}.${SimpleDateFormat("MM-dd-yyyy_hh-mm").format(Date())}"
     }
 }
+
 
 
 tasks.withType<KotlinCompile> {
@@ -68,3 +75,28 @@ tasks.withType<KotlinCompile> {
     }
 }
 
+fun getGitBranch(): String {
+    return try {
+        val byteOut = ByteArrayOutputStream()
+        project.exec {
+            commandLine = "git rev-parse --abbrev-ref HEAD".split(" ")
+            standardOutput = byteOut
+        }
+        String(byteOut.toByteArray()).trim().also {
+            if (it == "HEAD")
+                logger.warn("Unable to determine current branch: Project is checked out with detached head!")
+        }
+    } catch (e: Exception) {
+        logger.warn("Unable to determine current branch: ${e.message}")
+        "Unknown Branch"
+    }
+}
+
+fun getGitHash(): String {
+    val byteOut = ByteArrayOutputStream()
+    project.exec {
+        commandLine = "git rev-parse --short HEAD".split(" ")
+        standardOutput = byteOut
+    }
+    return String(byteOut.toByteArray()).trim()
+}

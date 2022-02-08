@@ -12,3 +12,13 @@ docker-compose up
 ```
 ./gradlew pactPublish
 ```
+
+4. Can I Delpoy?
+```
+docker run --rm --network host \
+  	-e PACT_BROKER_BASE_URL=http://localhost:9292 \
+  	pactfoundation/pact-cli:latest \
+  	broker can-i-deploy \
+  	--pacticipant userclient \
+  	--latest
+```

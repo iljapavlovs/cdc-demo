@@ -41,18 +41,18 @@ internal class PersonIntegraionTest {
     @Test
     fun createPerson() {
 
-        val personRequestDto = PersonRequestDto(name = "Ivan", ssn = "111")
+        val personRequestDto = PersonRequestDto(name = "Ivan", ssn = 111)
 
         mockMvc.perform(
             post("/persons")
                 .contentType("application/json")
                 .content(objectMapper.writeValueAsString(personRequestDto))
         )
-            .andExpect(status().isCreated);
+            .andExpect(status().isCreated)
 
         val persons = personRepository.findAll()
 
-        assertThat(persons).hasSize(1);
+        assertThat(persons).hasSize(1)
     }
 
     @Test

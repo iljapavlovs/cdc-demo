@@ -20,7 +20,7 @@ class PersonController(
 ) {
     @PostMapping
     fun createPerson(@RequestBody @Valid personRequestDto: PersonRequestDto): ResponseEntity<PersonResponseDto> {
-        val savedPerson: PersonEntity = personRepository.save(personRequestDto.toEntity(UUID.randomUUID().toString()))
+        val savedPerson: PersonEntity = personRepository.save(personRequestDto.toEntity(UUID.randomUUID()))
         return ResponseEntity
             .status(201)
             .body(savedPerson.toDto())

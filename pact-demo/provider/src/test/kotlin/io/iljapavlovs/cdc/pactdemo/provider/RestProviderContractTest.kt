@@ -16,6 +16,7 @@ import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.mock.mockito.MockBean
+import java.util.*
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT, properties = ["server.port=8888"])
@@ -30,7 +31,7 @@ import org.springframework.boot.test.mock.mockito.MockBean
  * Note that there are other options for loading pact files such as the @PactBroker annotation
  */
 //@PactFolder("pacts")
-@PactBroker(host = "localhost", port = "3000")
+@PactBroker(host = "localhost", port = "9292")
 class RestProviderContractTest {
     @MockBean
     private lateinit var personRepository: PersonRepository
@@ -47,8 +48,9 @@ class RestProviderContractTest {
     @BeforeEach
     fun setupTestTarget(context: PactVerificationContext) {
         context.target = HttpTestTarget("localhost", 8888, "/")
-        System.setProperty("pact.verifier.publishResults", "true");
-        System.setProperty("pact.provider.version", "buildVersion");
+//        these are set in build.gradle.kts
+//        System.setProperty("pact.verifier.publishResults", "true");
+//        System.setProperty("pact.provider.version", "buildVersion");
     }
 
     /**
@@ -78,9 +80,9 @@ class RestProviderContractTest {
     fun toCreatePersonState() {
 
         val person = PersonEntity(
-            id = "1",
+            id = UUID.randomUUID(),
             name = "Ivan",
-            ssn = "111"
+            ssn = 111
         )
         whenever(personRepository.save(any<PersonEntity>())) doReturn (person)
     }

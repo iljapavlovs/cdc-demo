@@ -1,20 +1,17 @@
 package io.iljapavlovs.cdc.pactdemo.provider
 
+import java.util.*
 import javax.persistence.Column
 import javax.persistence.Entity
-import javax.persistence.GeneratedValue
 import javax.persistence.Id
 import javax.validation.constraints.NotNull
 
 data class PersonRequestDto(
-     val name: String,
-     val ssn: String
+    val name: String, val ssn: Int
 )
 
 data class PersonResponseDto(
-     val id: String,
-     val name: String,
-     val ssn: String
+    val id: UUID, val name: String, val ssn: Int
 )
 
 /**
@@ -22,35 +19,24 @@ data class PersonResponseDto(
  */
 @Entity
 data class PersonEntity(
-     @Id
-     val id: String,
+    @Id val id: UUID,
 
-     @Column
-     @NotNull
-     var name: String,
+    @Column @NotNull var name: String,
 
-     @Column
-     @NotNull
-     var ssn: String
+    @Column @NotNull var ssn: Int
 ) {
 
-     fun updateFrom(person: PersonEntity) {
-          name = person.name
-          ssn = person.ssn
-     }
+    fun updateFrom(person: PersonEntity) {
+        name = person.name
+        ssn = person.ssn
+    }
 }
 
 
-fun PersonRequestDto.toEntity(id: String): PersonEntity =
-     PersonEntity(
-          id = id,
-          name = name,
-          ssn = ssn
-     )
+fun PersonRequestDto.toEntity(id: UUID): PersonEntity = PersonEntity(
+    id = id, name = name, ssn = ssn
+)
 
-fun PersonEntity.toDto(): PersonResponseDto =
-     PersonResponseDto(
-          id = id,
-          name = name,
-          ssn = ssn
-     )
+fun PersonEntity.toDto(): PersonResponseDto = PersonResponseDto(
+    id = id, name = name, ssn = ssn
+)

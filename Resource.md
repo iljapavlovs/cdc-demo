@@ -48,6 +48,7 @@
     
 # Pact
 
+* [MUST! Full example with Pact for JVM Spring](https://github.com/pact-foundation/pact-workshop-jvm-spring)
 * CI 
     * https://solidstudio.io/blog/consumer-driven-contract-ci-cd.html    
     * https://blog.testproject.io/2020/06/09/integrating-consumer-contract-testing-in-build-pipelines/

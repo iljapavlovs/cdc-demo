@@ -4,16 +4,20 @@
 docker-compose up
 ```
 
-1. Run Tests
+1. Run Tests (Will automatically publish reports to Pack Broker if pact.verifier.publishResults = true)
 ```
 ./gradlew clean test
 ```
 
-2. Publish Pact when tests are run 
+2. Can I Delpoy?
 ```
-./gradlew pactPublish
+docker run --rm --network host \
+  	-e PACT_BROKER_BASE_URL=http://localhost:9292 \
+  	pactfoundation/pact-cli:latest \
+  	broker can-i-deploy \
+  	--pacticipant userservice \
+  	--latest
 ```
-
 
 ### On Provider side
 1. Run Test
